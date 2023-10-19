@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DCF9C532A9ED25300B32904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C522A9ED25300B32904 /* AppDelegate.swift */; };
+		3DCF9C552A9ED25300B32904 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C542A9ED25300B32904 /* GameViewController.swift */; };
+		3DCF9C572A9ED25300B32904 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C562A9ED25300B32904 /* Renderer.swift */; };
+		3DCF9C592A9ED25300B32904 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C582A9ED25300B32904 /* Shaders.metal */; };
+		3DCF9C5C2A9ED25400B32904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF9C5B2A9ED25400B32904 /* Assets.xcassets */; };
+		3DCF9C5F2A9ED25400B32904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF9C5D2A9ED25400B32904 /* Main.storyboard */; };
+		3DCF9C6A2A9ED25500B32904 /* ProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C692A9ED25500B32904 /* ProteinTests.swift */; };
+		3DCF9C742A9ED25500B32904 /* ProteinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C732A9ED25500B32904 /* ProteinUITests.swift */; };
+		3DCF9C762A9ED25500B32904 /* ProteinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C752A9ED25500B32904 /* ProteinUITestsLaunchTests.swift */; };
+		3DCF9C832A9ED60100B32904 /* whatever.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C822A9ED60100B32904 /* whatever.m */; };
+		3DE543552AE05067007F4912 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE543542AE05067007F4912 /* Parser.swift */; };
+		3DF60DD12AE0869400888B72 /* protein.obj in Resources */ = {isa = PBXBuildFile; fileRef = 3DF60DD02AE0869400888B72 /* protein.obj */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DCF9C662A9ED25500B32904 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DCF9C472A9ED25300B32904 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCF9C4E2A9ED25300B32904;
+			remoteInfo = Protein;
+		};
+		3DCF9C702A9ED25500B32904 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DCF9C472A9ED25300B32904 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCF9C4E2A9ED25300B32904;
+			remoteInfo = Protein;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3DCF9C4F2A9ED25300B32904 /* Protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Protein.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCF9C522A9ED25300B32904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DCF9C542A9ED25300B32904 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3DCF9C562A9ED25300B32904 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		3DCF9C582A9ED25300B32904 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		3DCF9C5A2A9ED25300B32904 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		3DCF9C5B2A9ED25400B32904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DCF9C5E2A9ED25400B32904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DCF9C602A9ED25400B32904 /* Protein.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Protein.entitlements; sourceTree = "<group>"; };
+		3DCF9C652A9ED25500B32904 /* ProteinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProteinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCF9C692A9ED25500B32904 /* ProteinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinTests.swift; sourceTree = "<group>"; };
+		3DCF9C6F2A9ED25500B32904 /* ProteinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProteinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCF9C732A9ED25500B32904 /* ProteinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinUITests.swift; sourceTree = "<group>"; };
+		3DCF9C752A9ED25500B32904 /* ProteinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DCF9C822A9ED60100B32904 /* whatever.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = whatever.m; path = ../../../Desktop/Projects/rendering/tutorial/triangle/whatever.m; sourceTree = "<group>"; };
+		3DE543542AE05067007F4912 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		3DF60DD02AE0869400888B72 /* protein.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = protein.obj; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DCF9C4C2A9ED25300B32904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCF9C622A9ED25500B32904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCF9C6C2A9ED25500B32904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DCF9C462A9ED25300B32904 = {
+			isa = PBXGroup;
+			children = (
+				3DCF9C512A9ED25300B32904 /* Protein */,
+				3DCF9C682A9ED25500B32904 /* ProteinTests */,
+				3DCF9C722A9ED25500B32904 /* ProteinUITests */,
+				3DCF9C502A9ED25300B32904 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DCF9C502A9ED25300B32904 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF9C4F2A9ED25300B32904 /* Protein.app */,
+				3DCF9C652A9ED25500B32904 /* ProteinTests.xctest */,
+				3DCF9C6F2A9ED25500B32904 /* ProteinUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DCF9C512A9ED25300B32904 /* Protein */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF9C522A9ED25300B32904 /* AppDelegate.swift */,
+				3DCF9C542A9ED25300B32904 /* GameViewController.swift */,
+				3DF60DD02AE0869400888B72 /* protein.obj */,
+				3DCF9C562A9ED25300B32904 /* Renderer.swift */,
+				3DE543542AE05067007F4912 /* Parser.swift */,
+				3DCF9C582A9ED25300B32904 /* Shaders.metal */,
+				3DCF9C5A2A9ED25300B32904 /* ShaderTypes.h */,
+				3DCF9C822A9ED60100B32904 /* whatever.m */,
+				3DCF9C5B2A9ED25400B32904 /* Assets.xcassets */,
+				3DCF9C5D2A9ED25400B32904 /* Main.storyboard */,
+				3DCF9C602A9ED25400B32904 /* Protein.entitlements */,
+			);
+			path = Protein;
+			sourceTree = "<group>";
+		};
+		3DCF9C682A9ED25500B32904 /* ProteinTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF9C692A9ED25500B32904 /* ProteinTests.swift */,
+			);
+			path = ProteinTests;
+			sourceTree = "<group>";
+		};
+		3DCF9C722A9ED25500B32904 /* ProteinUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF9C732A9ED25500B32904 /* ProteinUITests.swift */,
+				3DCF9C752A9ED25500B32904 /* ProteinUITestsLaunchTests.swift */,
+			);
+			path = ProteinUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DCF9C4E2A9ED25300B32904 /* Protein */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCF9C792A9ED25500B32904 /* Build configuration list for PBXNativeTarget "Protein" */;
+			buildPhases = (
+				3DCF9C4B2A9ED25300B32904 /* Sources */,
+				3DCF9C4C2A9ED25300B32904 /* Frameworks */,
+				3DCF9C4D2A9ED25300B32904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Protein;
+			productName = Protein;
+			productReference = 3DCF9C4F2A9ED25300B32904 /* Protein.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DCF9C642A9ED25500B32904 /* ProteinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCF9C7C2A9ED25500B32904 /* Build configuration list for PBXNativeTarget "ProteinTests" */;
+			buildPhases = (
+				3DCF9C612A9ED25500B32904 /* Sources */,
+				3DCF9C622A9ED25500B32904 /* Frameworks */,
+				3DCF9C632A9ED25500B32904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DCF9C672A9ED25500B32904 /* PBXTargetDependency */,
+			);
+			name = ProteinTests;
+			productName = ProteinTests;
+			productReference = 3DCF9C652A9ED25500B32904 /* ProteinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3DCF9C6E2A9ED25500B32904 /* ProteinUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCF9C7F2A9ED25500B32904 /* Build configuration list for PBXNativeTarget "ProteinUITests" */;
+			buildPhases = (
+				3DCF9C6B2A9ED25500B32904 /* Sources */,
+				3DCF9C6C2A9ED25500B32904 /* Frameworks */,
+				3DCF9C6D2A9ED25500B32904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DCF9C712A9ED25500B32904 /* PBXTargetDependency */,
+			);
+			name = ProteinUITests;
+			productName = ProteinUITests;
+			productReference = 3DCF9C6F2A9ED25500B32904 /* ProteinUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DCF9C472A9ED25300B32904 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3DCF9C4E2A9ED25300B32904 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					3DCF9C642A9ED25500B32904 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 3DCF9C4E2A9ED25300B32904;
+					};
+					3DCF9C6E2A9ED25500B32904 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 3DCF9C4E2A9ED25300B32904;
+					};
+				};
+			};
+			buildConfigurationList = 3DCF9C4A2A9ED25300B32904 /* Build configuration list for PBXProject "Protein" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DCF9C462A9ED25300B32904;
+			productRefGroup = 3DCF9C502A9ED25300B32904 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DCF9C4E2A9ED25300B32904 /* Protein */,
+				3DCF9C642A9ED25500B32904 /* ProteinTests */,
+				3DCF9C6E2A9ED25500B32904 /* ProteinUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DCF9C4D2A9ED25300B32904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCF9C5C2A9ED25400B32904 /* Assets.xcassets in Resources */,
+				3DCF9C5F2A9ED25400B32904 /* Main.storyboard in Resources */,
+				3DF60DD12AE0869400888B72 /* protein.obj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCF9C632A9ED25500B32904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCF9C6D2A9ED25500B32904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DCF9C4B2A9ED25300B32904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCF9C592A9ED25300B32904 /* Shaders.metal in Sources */,
+				3DCF9C552A9ED25300B32904 /* GameViewController.swift in Sources */,
+				3DE543552AE05067007F4912 /* Parser.swift in Sources */,
+				3DCF9C572A9ED25300B32904 /* Renderer.swift in Sources */,
+				3DCF9C532A9ED25300B32904 /* AppDelegate.swift in Sources */,
+				3DCF9C832A9ED60100B32904 /* whatever.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCF9C612A9ED25500B32904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCF9C6A2A9ED25500B32904 /* ProteinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCF9C6B2A9ED25500B32904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCF9C762A9ED25500B32904 /* ProteinUITestsLaunchTests.swift in Sources */,
+				3DCF9C742A9ED25500B32904 /* ProteinUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DCF9C672A9ED25500B32904 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCF9C4E2A9ED25300B32904 /* Protein */;
+			targetProxy = 3DCF9C662A9ED25500B32904 /* PBXContainerItemProxy */;
+		};
+		3DCF9C712A9ED25500B32904 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCF9C4E2A9ED25300B32904 /* Protein */;
+			targetProxy = 3DCF9C702A9ED25500B32904 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3DCF9C5D2A9ED25400B32904 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DCF9C5E2A9ED25400B32904 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DCF9C772A9ED25500B32904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DCF9C782A9ED25500B32904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3DCF9C7A2A9ED25500B32904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Protein/Protein.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jana.Protein;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/ShaderTypes.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3DCF9C7B2A9ED25500B32904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Protein/Protein.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jana.Protein;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/ShaderTypes.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3DCF9C7D2A9ED25500B32904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jana.ProteinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Protein.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Protein";
+			};
+			name = Debug;
+		};
+		3DCF9C7E2A9ED25500B32904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jana.ProteinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Protein.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Protein";
+			};
+			name = Release;
+		};
+		3DCF9C802A9ED25500B32904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jana.ProteinUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Protein;
+			};
+			name = Debug;
+		};
+		3DCF9C812A9ED25500B32904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jana.ProteinUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Protein;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DCF9C4A2A9ED25300B32904 /* Build configuration list for PBXProject "Protein" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCF9C772A9ED25500B32904 /* Debug */,
+				3DCF9C782A9ED25500B32904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCF9C792A9ED25500B32904 /* Build configuration list for PBXNativeTarget "Protein" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCF9C7A2A9ED25500B32904 /* Debug */,
+				3DCF9C7B2A9ED25500B32904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCF9C7C2A9ED25500B32904 /* Build configuration list for PBXNativeTarget "ProteinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCF9C7D2A9ED25500B32904 /* Debug */,
+				3DCF9C7E2A9ED25500B32904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCF9C7F2A9ED25500B32904 /* Build configuration list for PBXNativeTarget "ProteinUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCF9C802A9ED25500B32904 /* Debug */,
+				3DCF9C812A9ED25500B32904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DCF9C472A9ED25300B32904 /* Project object */;
+}

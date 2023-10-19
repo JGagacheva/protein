@@ -1,0 +1,10 @@
+xcuserdata
+*.key
+*.pdb
+*.obj
+.DS_Store
+*.xcworkspacedata
+*.xcuserstate
+*.xcscheme
+xcschememanagement.plist
+*.xcbkptlist
