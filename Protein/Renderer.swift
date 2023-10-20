@@ -42,6 +42,7 @@ class Renderer: NSObject, MTKViewDelegate {
     let instanceCount: Int
 
     var projectionMatrix: matrix_float4x4 = matrix_float4x4()
+    public var viewMatrix = matrix4x4_translation(0.0, 0.0, -8.0)
     var rotation: Float = 0
     var scale: Float = 0
 
@@ -67,9 +68,11 @@ class Renderer: NSObject, MTKViewDelegate {
         instances = UnsafeMutableRawPointer(PerInstanceBuffer.contents()).bindMemory(to: PerInstanceUniforms.self, capacity: atoms.count)
         // TODO: Populate instances using atoms
         for (instance, atom) in atoms.enumerated() {
-            instances[instance].modelMatrix = matrix4x4_translation(atom.x, atom.y, atom.z)
+            instances[instance].modelMatrix =
+            matrix4x4_scale(Float(0.05), Float(0.05), Float(0.05)) * matrix4x4_translation(atom.x, atom.y, atom.z)
         }
         
+        /// define depth buffer
         metalKitView.depthStencilPixelFormat = MTLPixelFormat.depth32Float_stencil8
         metalKitView.colorPixelFormat = MTLPixelFormat.bgra8Unorm_srgb
         metalKitView.sampleCount = 1
@@ -84,7 +87,8 @@ class Renderer: NSObject, MTKViewDelegate {
             print("Unable to compile render pipeline state.  Error info: \(error)")
             return nil
         }
-
+        
+        // depth needed to "organize" pixels
         let depthStateDescriptor = MTLDepthStencilDescriptor()
         depthStateDescriptor.depthCompareFunction = MTLCompareFunction.less
         depthStateDescriptor.isDepthWriteEnabled = true
@@ -211,7 +215,8 @@ class Renderer: NSObject, MTKViewDelegate {
 
         uniforms[0].projectionMatrix = projectionMatrix
         
-        let viewMatrix = matrix4x4_translation(0.0, 0.0, -8.0)
+        ///move up and declare it as public for camera view
+//        let viewMatrix = matrix4x4_translation(0.0, 0.0, -8.0)
         uniforms[0].viewMatrix = viewMatrix
         /*
         let rotationAxis = SIMD3<Float>(1, 1, 0)
@@ -226,6 +231,8 @@ class Renderer: NSObject, MTKViewDelegate {
                 matrix4x4_translation(1, 10 * Float(instance), 10 * Float(instance))
         }
         */
+        
+        
     }
 
     func draw(in view: MTKView) {

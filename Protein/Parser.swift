@@ -45,9 +45,9 @@ func parsePDB(url: URL) -> Array<Atom> {
     } catch {
         print("The file reading failed with error: \(error)")
     }
-    for atom in atoms {
-        print(atom)
-    }
+//    for atom in atoms {
+//        print(atom)
+//    }
     return atoms
 }
 
