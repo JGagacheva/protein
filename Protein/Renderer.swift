@@ -27,7 +27,7 @@ class Renderer: NSObject, MTKViewDelegate {
     let commandQueue: MTLCommandQueue
     var pipelineState: MTLRenderPipelineState
     var depthState: MTLDepthStencilState
-    var colorMap: MTLTexture
+//    var colorMap: MTLTexture
 
     let inFlightSemaphore = DispatchSemaphore(value: maxBuffersInFlight)
 
@@ -66,10 +66,35 @@ class Renderer: NSObject, MTKViewDelegate {
                                                            options:[MTLResourceOptions.storageModeShared])!
         self.PerInstanceBuffer.label = "PerInstanceBuffer"
         instances = UnsafeMutableRawPointer(PerInstanceBuffer.contents()).bindMemory(to: PerInstanceUniforms.self, capacity: atoms.count)
+        
         // TODO: Populate instances using atoms
         for (instance, atom) in atoms.enumerated() {
             instances[instance].modelMatrix =
             matrix4x4_scale(Float(0.05), Float(0.05), Float(0.05)) * matrix4x4_translation(atom.x, atom.y, atom.z)
+            if atom.type == "O" {
+                // Oxygen = Red
+                instances[instance].color = SIMD4<Float>(x: 1.0, y: 0.0, z: 0.0, w: 1.0)
+            }
+            if atom.type == "Cl" {
+                // Chlorine = Green
+                instances[instance].color = .init(x: 0.0, y: 1.0, z: 0.0, w: 1.0)
+            }
+            if atom.type == "N" {
+                // Nitrogen = Blue
+                instances[instance].color = .init(x: 0.0, y: 0.0, z: 1.0, w: 1.0)
+            }
+            if atom.type == "C" {
+                // Carbon = Gray
+                instances[instance].color = .init(x: 0.5, y: 0.5, z: 0.5, w: 0.5)
+            }
+            if atom.type == "S" {
+                // Sulphur = Yellow
+                instances[instance].color = .init(x: 1.0, y: 1.0, z: 0.0, w: 1.0)
+            }
+            if atom.type == "P" {
+                // Phosphorus = Orange
+                instances[instance].color = .init(x: 1.0, y: 0.5, z: 0.0, w: 1.0)
+            }
         }
         
         /// define depth buffer
@@ -101,12 +126,12 @@ class Renderer: NSObject, MTKViewDelegate {
             return nil
         }
 
-        do {
-            colorMap = try Renderer.loadTexture(device: device, textureName: "ColorMap")
-        } catch {
-            print("Unable to load texture. Error info: \(error)")
-            return nil
-        }
+//        do {
+//            colorMap = try Renderer.loadTexture(device: device, textureName: "ColorMap")
+//        } catch {
+//            print("Unable to load texture. Error info: \(error)")
+//            return nil
+//        }
 
         super.init()
 
@@ -174,7 +199,7 @@ class Renderer: NSObject, MTKViewDelegate {
                                      allocator: metalAllocator)
         */
         let radius: Float = 1
-        let mdlMesh = MDLMesh.newEllipsoid(withRadii: SIMD3<Float>(radius, radius, radius), radialSegments: 5, verticalSegments: 5, geometryType: MDLGeometryType.triangles, inwardNormals: false, hemisphere: false, allocator: metalAllocator)
+        let mdlMesh = MDLMesh.newEllipsoid(withRadii: SIMD3<Float>(radius, radius, radius), radialSegments: 10, verticalSegments: 10, geometryType: MDLGeometryType.triangles, inwardNormals: false, hemisphere: false, allocator: metalAllocator)
 
         let mdlVertexDescriptor = MTKModelIOVertexDescriptorFromMetal(mtlVertexDescriptor)
         guard let attributes = mdlVertexDescriptor.attributes as? [MDLVertexAttribute] else {
@@ -188,19 +213,19 @@ class Renderer: NSObject, MTKViewDelegate {
         return try MTKMesh(mesh:mdlMesh, device:device)
     }
 
-    class func loadTexture(device: MTLDevice,
-                           textureName: String) throws -> MTLTexture {
-        /// Load texture data with optimal parameters for sampling
-        let textureLoader = MTKTextureLoader(device: device)
-        let textureLoaderOptions = [
-            MTKTextureLoader.Option.textureUsage: NSNumber(value: MTLTextureUsage.shaderRead.rawValue),
-            MTKTextureLoader.Option.textureStorageMode: NSNumber(value: MTLStorageMode.`private`.rawValue)
-        ]
-        return try textureLoader.newTexture(name: textureName,
-                                            scaleFactor: 1.0,
-                                            bundle: nil,
-                                            options: textureLoaderOptions)
-    }
+//    class func loadTexture(device: MTLDevice,
+//                           textureName: String) throws -> MTLTexture {
+//        /// Load texture data with optimal parameters for sampling
+//        let textureLoader = MTKTextureLoader(device: device)
+//        let textureLoaderOptions = [
+//            MTKTextureLoader.Option.textureUsage: NSNumber(value: MTLTextureUsage.shaderRead.rawValue),
+//            MTKTextureLoader.Option.textureStorageMode: NSNumber(value: MTLStorageMode.`private`.rawValue)
+//        ]
+//        return try textureLoader.newTexture(name: textureName,
+//                                            scaleFactor: 1.0,
+//                                            bundle: nil,
+//                                            options: textureLoaderOptions)
+//    }
 
     private func updateDynamicBufferState() {
         /// Update the state of our uniform buffers before rendering
@@ -281,8 +306,8 @@ class Renderer: NSObject, MTKViewDelegate {
                         }
                     }
                     
-                    renderEncoder.setFragmentTexture(colorMap, index: TextureIndex.color.rawValue)
                     
+//                    renderEncoder.setFragmentTexture(colorMap, index: TextureIndex.color.rawValue)
                     
                     for submesh in mesh.submeshes {
                         renderEncoder.drawIndexedPrimitives(type: submesh.primitiveType,
