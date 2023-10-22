@@ -98,9 +98,10 @@ class Renderer: NSObject, MTKViewDelegate {
         }
         
         /// define depth buffer
+        // depth32Float uses one single-precision float per pixel to track the distance from the camera to the nearest fragment seen so far.
         metalKitView.depthStencilPixelFormat = MTLPixelFormat.depth32Float_stencil8
         metalKitView.colorPixelFormat = MTLPixelFormat.bgra8Unorm_srgb
-        metalKitView.sampleCount = 1
+        metalKitView.sampleCount = 4
 
         let mtlVertexDescriptor = Renderer.buildMetalVertexDescriptor()
 
@@ -113,7 +114,14 @@ class Renderer: NSObject, MTKViewDelegate {
             return nil
         }
         
-        // depth needed to "organize" pixels
+        /*
+         Depth:
+         - depth needed to "organize" pixels
+         - we want to keep the fragment that is closest to the camera for each pixel, so we use a compare function of .less.
+         - We also set isDepthWriteEnabled to true, so that the depth values of passing fragments are actually written to the depth buffer.
+         - self.depthState = device.makeDepthStencilState(descriptor:depthStateDescriptor)! -- renderer’s initializer
+         */
+        
         let depthStateDescriptor = MTLDepthStencilDescriptor()
         depthStateDescriptor.depthCompareFunction = MTLCompareFunction.less
         depthStateDescriptor.isDepthWriteEnabled = true
@@ -150,15 +158,26 @@ class Renderer: NSObject, MTKViewDelegate {
         mtlVertexDescriptor.attributes[VertexAttribute.texcoord.rawValue].format = MTLVertexFormat.float2
         mtlVertexDescriptor.attributes[VertexAttribute.texcoord.rawValue].offset = 0
         mtlVertexDescriptor.attributes[VertexAttribute.texcoord.rawValue].bufferIndex = BufferIndex.meshGenerics.rawValue
-
+        
+        //--------------------------------------------------
+        mtlVertexDescriptor.attributes[VertexAttribute.normals.rawValue].format = MTLVertexFormat.float3
+        mtlVertexDescriptor.attributes[VertexAttribute.normals.rawValue].offset = 0
+        mtlVertexDescriptor.attributes[VertexAttribute.normals.rawValue].bufferIndex = BufferIndex.meshNormals.rawValue 
+        //--------------------------------------------------
+        
+        // position
         mtlVertexDescriptor.layouts[BufferIndex.meshPositions.rawValue].stride = MemoryLayout<SIMD3<Float32>>.stride
         mtlVertexDescriptor.layouts[BufferIndex.meshPositions.rawValue].stepRate = 1
         mtlVertexDescriptor.layouts[BufferIndex.meshPositions.rawValue].stepFunction = MTLVertexStepFunction.perVertex
-
+        // texCoord
         mtlVertexDescriptor.layouts[BufferIndex.meshGenerics.rawValue].stride = MemoryLayout<SIMD3<Float32>>.stride
         mtlVertexDescriptor.layouts[BufferIndex.meshGenerics.rawValue].stepRate = 1
         mtlVertexDescriptor.layouts[BufferIndex.meshGenerics.rawValue].stepFunction = MTLVertexStepFunction.perVertex
-
+        // normals
+        mtlVertexDescriptor.layouts[BufferIndex.meshNormals.rawValue].stride = MemoryLayout<SIMD3<Float32>>.stride
+        mtlVertexDescriptor.layouts[BufferIndex.meshNormals.rawValue].stepRate = 1
+        mtlVertexDescriptor.layouts[BufferIndex.meshNormals.rawValue].stepFunction = MTLVertexStepFunction.perVertex
+        
         return mtlVertexDescriptor
     }
 
@@ -207,7 +226,8 @@ class Renderer: NSObject, MTKViewDelegate {
         }
         attributes[VertexAttribute.position.rawValue].name = MDLVertexAttributePosition
         attributes[VertexAttribute.texcoord.rawValue].name = MDLVertexAttributeTextureCoordinate
-
+        attributes[VertexAttribute.normals.rawValue].name = MDLVertexAttributeNormal
+        
         mdlMesh.vertexDescriptor = mdlVertexDescriptor
 
         return try MTKMesh(mesh:mdlMesh, device:device)

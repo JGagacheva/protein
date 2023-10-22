@@ -4,6 +4,8 @@
 //
 //  Created by Jana on 8/29/23.
 //
+// Camera stuff from https://www.youtube.com/watch?v=772VQ-yJQYY&t=659s and https://github.com/metal-by-example/MetalFlyCamera
+
 
 import Cocoa
 import MetalKit
