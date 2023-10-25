@@ -24,38 +24,42 @@ class GameViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Load the file
-        let url = URL(fileURLWithPath: "/Users/jana/LocalDesktop/parsingPDB/protein.pdb")
-        let atoms = parsePDB(url: url)
-        
-        guard let mtkView = self.view as? MTKView else {
-            print("View attached to GameViewController is not an MTKView")
-            return
-        }
+    }
+    
+    override var representedObject: Any? {
+        didSet {
+            guard let atoms = representedObject as? Array<Atom> else {
+                return
+            }
+            
+            guard let mtkView = self.view as? MTKView else {
+                print("View attached to GameViewController is not an MTKView")
+                return
+            }
 
-        // Select the device to render with.  We choose the default device
-        guard let defaultDevice = MTLCreateSystemDefaultDevice() else {
-            print("Metal is not supported on this device")
-            return
-        }
+            // Select the device to render with.  We choose the default device
+            guard let defaultDevice = MTLCreateSystemDefaultDevice() else {
+                print("Metal is not supported on this device")
+                return
+            }
 
-        mtkView.device = defaultDevice
+            mtkView.device = defaultDevice
+            
+            guard let newRenderer = Renderer(metalKitView: mtkView, atoms: atoms) else {
+                print("Renderer cannot be initialized")
+                return
+            }
 
-        guard let newRenderer = Renderer(metalKitView: mtkView, atoms: atoms) else {
-            print("Renderer cannot be initialized")
-            return
-        }
+            renderer = newRenderer
 
-        renderer = newRenderer
+            renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
 
-        renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
-
-        mtkView.delegate = renderer
-        
-        //camera
-        Timer.scheduledTimer(withTimeInterval: 1 / 60.0, repeats: true) { timer in
-            self.updateCamera()
+            mtkView.delegate = renderer
+            
+            //camera
+            Timer.scheduledTimer(withTimeInterval: 1 / 60.0, repeats: true) { timer in
+                self.updateCamera()
+            }
         }
     }
     

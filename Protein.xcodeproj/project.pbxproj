@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D08938A2AE8D0440067A9AE /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0893892AE8D0440067A9AE /* Document.swift */; };
 		3D6790EB2AE2231500F9499C /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6790EA2AE2231500F9499C /* Camera.swift */; };
 		3DCF9C532A9ED25300B32904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C522A9ED25300B32904 /* AppDelegate.swift */; };
 		3DCF9C552A9ED25300B32904 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C542A9ED25300B32904 /* GameViewController.swift */; };
@@ -18,7 +19,6 @@
 		3DCF9C742A9ED25500B32904 /* ProteinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C732A9ED25500B32904 /* ProteinUITests.swift */; };
 		3DCF9C762A9ED25500B32904 /* ProteinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF9C752A9ED25500B32904 /* ProteinUITestsLaunchTests.swift */; };
 		3DE543552AE05067007F4912 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE543542AE05067007F4912 /* Parser.swift */; };
-		3DF60DD12AE0869400888B72 /* protein.obj in Resources */ = {isa = PBXBuildFile; fileRef = 3DF60DD02AE0869400888B72 /* protein.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D0893882AE8CFF60067A9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3D0893892AE8D0440067A9AE /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		3D6790EA2AE2231500F9499C /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		3DCF9C4F2A9ED25300B32904 /* Protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Protein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCF9C522A9ED25300B32904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +57,6 @@
 		3DCF9C732A9ED25500B32904 /* ProteinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinUITests.swift; sourceTree = "<group>"; };
 		3DCF9C752A9ED25500B32904 /* ProteinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3DE543542AE05067007F4912 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		3DF60DD02AE0869400888B72 /* protein.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = protein.obj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +107,11 @@
 		3DCF9C512A9ED25300B32904 /* Protein */ = {
 			isa = PBXGroup;
 			children = (
+				3D0893882AE8CFF60067A9AE /* Info.plist */,
 				3DCF9C522A9ED25300B32904 /* AppDelegate.swift */,
 				3DCF9C542A9ED25300B32904 /* GameViewController.swift */,
-				3DF60DD02AE0869400888B72 /* protein.obj */,
 				3DCF9C562A9ED25300B32904 /* Renderer.swift */,
+				3D0893892AE8D0440067A9AE /* Document.swift */,
 				3DE543542AE05067007F4912 /* Parser.swift */,
 				3DCF9C582A9ED25300B32904 /* Shaders.metal */,
 				3D6790EA2AE2231500F9499C /* Camera.swift */,
@@ -244,7 +246,6 @@
 			files = (
 				3DCF9C5C2A9ED25400B32904 /* Assets.xcassets in Resources */,
 				3DCF9C5F2A9ED25400B32904 /* Main.storyboard in Resources */,
-				3DF60DD12AE0869400888B72 /* protein.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +275,7 @@
 				3DCF9C552A9ED25300B32904 /* GameViewController.swift in Sources */,
 				3DE543552AE05067007F4912 /* Parser.swift in Sources */,
 				3DCF9C572A9ED25300B32904 /* Renderer.swift in Sources */,
+				3D08938A2AE8D0440067A9AE /* Document.swift in Sources */,
 				3DCF9C532A9ED25300B32904 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +447,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Protein/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -471,6 +474,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Protein/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

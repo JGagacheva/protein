@@ -15,14 +15,16 @@ struct Atom {
 }
 
 ////reading
-func parsePDB(url: URL) -> Array<Atom> {
+func parsePDB(data: Data) -> Array<Atom>? {
     var strings: [String] = []
     var newLine: [Float] = []
     var atom: String = ""
     var atoms: Array<Atom> = []
     
     do {
-        let file = try String(contentsOf: url, encoding: .utf8)
+        guard let file = String(data: data, encoding: .utf8) else {
+            return nil
+        }
         let lines = file.split(whereSeparator: \.isNewline)
         
         for line in lines {
